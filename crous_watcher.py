@@ -16,7 +16,7 @@ import requests
 
 # --- Configuration (valeurs pour Bourges) ----------------------------
 TOOL_ID = 47
-WEST, NORTH, EAST, SOUTH = -5.0, 51.5, 9.5, 41.0
+WEST, NORTH, EAST, SOUTH = 2.3239701, 47.1300959, 2.4719573, 47.0259507
 
 API_URL = f"https://trouverunlogement.lescrous.fr/api/fr/search/{TOOL_ID}"
 
@@ -147,10 +147,10 @@ def main() -> None:
 
     print(f"{len(current)} logement(s) trouvé(s) pour la zone.")
 
-    #if first_run:
-     #   save_seen(set(current.keys()))
-    #  print(f"Premier lancement : {len(current)} logement(s) initialisé(s) sans alerte.")
-     #   return
+    if first_run:
+        save_seen(set(current.keys()))
+        print(f"Premier lancement : {len(current)} logement(s) initialisé(s) sans alerte.")
+        return
 
     new_ids = [i for i in current if i not in seen]
 
