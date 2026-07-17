@@ -147,10 +147,10 @@ def main() -> None:
 
     print(f"{len(current)} logement(s) trouvé(s) pour la zone.")
 
-    if first_run:
-        save_seen(set(current.keys()))
-        print(f"Premier lancement : {len(current)} logement(s) initialisé(s) sans alerte.")
-        return
+    #if first_run:
+     #   save_seen(set(current.keys()))
+    #  print(f"Premier lancement : {len(current)} logement(s) initialisé(s) sans alerte.")
+     #   return
 
     new_ids = [i for i in current if i not in seen]
 
